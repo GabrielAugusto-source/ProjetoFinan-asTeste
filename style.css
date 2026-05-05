@@ -1,11 +1,11 @@
 :root {
-    --primary: #8b5cf6;
+    --primary: #6f79ff;
     --accent: #d8b4fe;
     --success: #10b981;
     --warning: #f59e0b;
     --danger: #ef4444;
     --glass: rgba(111, 79, 255, 0.87);
-    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-border: rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -223,4 +223,22 @@ button {
     .stats-grid {
         gap: 10px;
     }
+}
+/* Adicione isso para garantir que o corpo consiga centralizar o login */
+body {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente se for a única página */
+    justify-content: center;
+}
+
+/* Estilização extra para inputs focados */
+input:focus {
+    outline: 2px solid var(--primary);
+    background: white;
+}
+
+/* Efeito de hover nos botões */
+.btn-glass:hover, .btn-primary:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow | Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://fontawesome.com" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+    <div class="app-container">
+        <header>
+            <div class="user-info">
+                <h1>Dashboard</h1>
+                <p id="current-date"></p>
+            </div>
+            <div class="status-badge" id="status-badge">Estável</div>
+        </header>
+
+        <section class="main-card">
+            <div class="balance-display">
+                <span class="label">Saldo Disponível</span>
+                <h2 id="balance">R$ 0,00</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="label">Receita</span>
+                    <p id="display-income">R$ 0</p>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Gastos</span>
+                    <p id="display-expenses">R$ 0</p>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>Uso do Limite</span>
+                    <span id="limit-percent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <div class="glass-input-group">
+                <h3>Planejamento</h3>
+                <div class="row">
+                    <input type="number" id="monthly-income" placeholder="Receita">
+                    <input type="number" id="monthly-limit" placeholder="Limite">
+                </div>
+                <button onclick="setBudget()" class="btn-glass">Configurar Mês</button>
+            </div>
+
+            <div class="glass-input-group">
+                <h3>Novo Gasto</h3>
+                <input type="text" id="expense-name" placeholder="Descrição">
+                <div class="row">
+                    <input type="number" id="expense-amount" placeholder="Valor">
+                    <input type="date" id="expense-date">
+                </div>
+                <button onclick="addExpense()" class="btn-primary">Registrar Gasto</button>
+            </div>
+        </section>
+
+        <section class="history">
+            <h3>Movimentações</h3>
+            <ul id="transaction-list"></ul>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
