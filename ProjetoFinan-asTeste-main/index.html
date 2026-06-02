@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Finanças</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo2.png">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://fontawesome.com" crossorigin="anonymous"></script>
+    <style>
+
+        body { align-items: center; }
+        .login-container { text-align: center; }
+        .login-container h1 { margin-bottom: 10px; color: white; }
+        .login-container p { color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+        .forgot-password {
+            display: block;
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-blur"></div>
+    
+    <div class="app-container login-container">
+        <header style="justify-content: center; flex-direction: column;">
+            <h1>Controle de Finanças</h1>
+            <p>Gerencie seu fluxo financeiro com elegância.</p>
+        </header>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="glass-input-group">
+                <input type="email" id="email" placeholder="E-mail" required style="margin-bottom: 15px;">
+                <input type="password" id="password" placeholder="Senha" required>
+            </div>
+            
+            <button type="submit" class="btn-glass">Entrar no Dashboard</button>
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+        </form>
+    </div>
+
+</body>
+<script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            window.location.href = "projis.html";
+        }
+    </script>
+</html>

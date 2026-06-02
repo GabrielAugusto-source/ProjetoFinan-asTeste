@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Finanças</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-blur"></div>
+    
+    <div class="app-container">
+        <header>
+            <div class="user-info">
+                <h1>Controle de Finanças</h1>
+            </div>
+            <div class="status-badge" id="status-badge">Estável</div>
+        </header>
+
+        <button onclick="resetAllRequest()" class="btn-reset">Redefinir Dados</button>
+        
+
+        <section class="main-card">
+            <div class="balance-display">
+                <span class="label">Saldo Disponível</span>
+                <h2 id="balance">R$ 0,00</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="label">Receita</span>
+                    <p id="display-income">R$ 0,00</p>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Gastos</span>
+                    <p id="display-expenses">R$ 0,00</p>
+                <div class='stat-item'>
+                    <span class="label">Limite</span>
+                    <p id="display-limit">R$ 0,00</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>Uso do Limite</span>
+                    <span id="limit-percent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <div class="glass-input-group">
+                <h3>Planejamento</h3>
+                <div class="row">
+                    <input type="number" id="monthly-income" placeholder="Receita">
+                    <input type="number" id="monthly-limit" placeholder="Limite">
+                </div>
+                <button onclick="setBudget()" class="btn-glass">Configurar Mês</button>
+            </div>
+
+            <div class="glass-input-group">
+                <h3>Novo Gasto</h3>
+                <input type="text" id="expense-name" placeholder="Descrição">
+                <div class="row">
+                    <input type="number" id="expense-amount" placeholder="Valor">
+                    <input type="date" id="expense-date">
+                </div>
+                <button onclick="addExpense()" class="btn-primary">Registrar Gasto</button>
+            </div>
+        </section>
+
+        <section class="history">
+            <h3>Movimentações</h3>
+            <ul id="transaction-list"></ul>
+        </section>
+    </div> 
+
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">🚨</div>
+            <h3>Excluir Movimentação?</h3>
+            <p>Esta ação não pode ser desfeita.</p>
+            <div class="modal-actions">
+                <button onclick="closeModal()" class="btn-cancel">Cancelar</button>
+                <button onclick="confirmDeletion()" class="btn-confirm">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" id="alert-icon">⚠️</div>
+            <h3 id="alert-title">Ops! Algo deu errado</h3>
+            <p id="alert-message">Verifique os dados informados.</p>
+            <div class="modal-actions">
+                <button onclick="closeAlertModal()" class="btn-primary" style="padding: 12px;">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="toast" class="toast"></div>
+</body>
+</html>
